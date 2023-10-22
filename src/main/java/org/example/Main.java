@@ -148,20 +148,4 @@ public class Main {
         System.out.println();
     }
 
-    private static double calculateAccuracy(List<DataPoint> testData, KNN knn) {
-        int correct = 0;
-        int total = testData.size();
-
-        for (DataPoint dataPoint : testData) {
-            String predicted = knn.classify(dataPoint.features, new EuclidianDistance());
-            String actualLabel = dataPoint.label;
-
-            if (predicted.equals(actualLabel)) {
-                correct++;
-            }
-        }
-
-        return (double) correct / total;
-    }
-
 }
